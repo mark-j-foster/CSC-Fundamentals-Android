@@ -1,4 +1,4 @@
-package com.markjfoster.ToDoList;
+package com.markjfoster.todolist;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,8 +20,8 @@ class Main {
     public static void main(String[] args) {
         List<String> task = new ArrayList<String>();
         int tasks = 0;
-        String answer = "";
-        int ans = 0;
+        String answer;
+        int ans;
         int ch = 999;
         do {
             System.out.println("\n\t:To-Do List:");
