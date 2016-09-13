@@ -14,6 +14,15 @@ public class ToDoList {
         }
         return(true);
     }
+
+    public static void prompt() {
+        System.out.println("\n\t:To-Do List:");
+        System.out.println("(1)  Add a task.");
+        System.out.println("(2)  Remove a task.");
+        System.out.println("(3)  Update a task.");
+        System.out.println("(4)  List all tasks.");
+        System.out.println("(0)  Exit.");
+    }
 }
 
 class Main {
@@ -24,12 +33,7 @@ class Main {
         int ans;
         int ch = 999;
         do {
-            System.out.println("\n\t:To-Do List:");
-            System.out.println("(1)  Add a task.");
-            System.out.println("(2)  Remove a task.");
-            System.out.println("(3)  Update a task.");
-            System.out.println("(4)  List all tasks.");
-            System.out.println("(0)  Exit.");
+            ToDoList.prompt();
             Scanner reader = new Scanner(in);
             answer = reader.nextLine();
             if (!ToDoList.isInteger(answer)) {
@@ -92,6 +96,8 @@ class Main {
                             System.out.println(t);
                         }
                         break;
+                    default:
+                        System.out.println("Invalid command");
                 }
             }
         }
