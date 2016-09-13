@@ -1,12 +1,12 @@
-package com.markjfoster.todolist;
+package com.markjfoster.ToDoList;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import static java.lang.System.in;
 
-public class ToDoList {
-    public static boolean isInteger(String s) {
+class ToDoList {
+    static boolean isInteger(String s) {
         try {
             Integer.parseInt(s);
         } catch (NumberFormatException e) {
@@ -15,7 +15,7 @@ public class ToDoList {
         return(true);
     }
 
-    public static void prompt() {
+    static void prompt() {
         System.out.println("\n\t:To-Do List:");
         System.out.println("(1)  Add a task.");
         System.out.println("(2)  Remove a task.");
@@ -27,7 +27,7 @@ public class ToDoList {
 
 class Main {
     public static void main(String[] args) {
-        List<String> task = new ArrayList<String>();
+        List<String> task = new ArrayList<>();
         int tasks = 0;
         String answer;
         int ans;
@@ -44,13 +44,19 @@ class Main {
                     case 0:
                         break;
                     case 1:
-                        System.out.print("Task: ");
+                        System.out.println("Enter description of tbe Task: ");
                         answer = reader.nextLine();
                         task.add(answer);
                         ++tasks;
                         break;
                     case 2:
-                        System.out.print("Please enter the task to remove: ");
+                        System.out.println("Please enter the task to be removed");
+                        int i = 0;
+                        for (String t : task) {
+                            System.out.print(i++ + ": ");
+                            System.out.println(t);
+                        }
+                        System.out.println("Select the ID of the item: ");
                         answer = reader.nextLine();
                         if (!ToDoList.isInteger(answer)) {
                             System.out.println("Invalid command");
@@ -67,12 +73,12 @@ class Main {
                         break;
                     case 3:
                         System.out.println("Please enter the task to be updated");
-                        int i = 0;
+                        i = 0;
                         for (String t : task) {
                             System.out.print(i++ + ": ");
                             System.out.println(t);
                         }
-                        System.out.print("Update which item? ");
+                        System.out.println("Select the ID of the item: ");
                         answer = reader.nextLine();
                         if (!ToDoList.isInteger(answer)) {
                             System.out.println("Invalid command");
@@ -84,7 +90,7 @@ class Main {
                                 break;
                             }
                         }
-                        System.out.print("Task: ");
+                        System.out.println("Enter description of the Task: ");
                         answer = reader.nextLine();
                         task.remove(ans);
                         task.add(answer);
