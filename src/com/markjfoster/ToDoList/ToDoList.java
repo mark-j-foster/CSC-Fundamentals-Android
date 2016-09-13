@@ -1,4 +1,4 @@
-package com.markjfoster.ToDoList;
+package com.markjfoster.todolist;
 
 import java.util.ArrayList;
 import java.util.List;
