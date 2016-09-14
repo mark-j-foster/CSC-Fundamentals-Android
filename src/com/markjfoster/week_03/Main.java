@@ -13,8 +13,8 @@ public class Main {
 
     static double userInput() {
         System.out.println("Enter a Fahrenheit temperature: ");
-        Scanner scanner = new scanner(System.in);
-        String input = scanner.nextLine;
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
         double doubleInput = Double.parseDouble(input);
         return(doubleInput);
     }
