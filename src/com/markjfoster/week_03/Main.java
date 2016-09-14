@@ -1,6 +1,6 @@
 package com.markjfoster.week_03;
 
-import com.sun.java_cup.internal.runtime.Scanner;
+import java.util.Scanner;
 
 public class Main {
     static double fToC(double fahrenheit) {
@@ -13,8 +13,7 @@ public class Main {
 
     static double userInput() {
         System.out.println("Enter a Fahrenheit temperature: ");
-        Scanner scanner;
-        scanner = new scanner(System.in);
+        Scanner scanner = new scanner(System.in);
         String input = scanner.nextLine;
         double doubleInput = Double.parseDouble(input);
         return(doubleInput);
@@ -23,6 +22,7 @@ public class Main {
         double userTemperature = userInput();
         while (userTemperature >= -460) {
             double celsius = fToC(userTemperature);
+            displayTemperature(celsius);
             userTemperature = userInput();
         }
     }
