@@ -1,23 +1,29 @@
 package com.markjfoster.week_03;
 
+import com.sun.java_cup.internal.runtime.Scanner;
+
 public class Main {
-    static double cToF(double celsius) {
-        double fahrenheit = 9.0/5 * celsius + 32;
-        return(fahrenheit);
+    static double fToC(double fahrenheit) {
+        double celsius = (fahrenheit - 32) * 5.0 / 9;
+        return(celsius);
     }
-    static void displayDailyTemperatures(double lowF, double highF) {
-        System.out.println("The low temp will be " + lowF
-                + " degrees Fahrenheit and the high temperature will be "
-                + highF + " degrees Fahrenheit.");
+    static void displayTemperature(double temperature) {
+        System.out.println("The temperature is " + temperature + ".");
     }
 
+    static double userInput() {
+        System.out.println("Enter a Fahrenheit temperature: ");
+        Scanner scanner;
+        scanner = new scanner(System.in);
+        String input = scanner.nextLine;
+        double doubleInput = Double.parseDouble(input);
+        return(doubleInput);
+    }
     public static void main(String[] args) {
-        double[] lows = {0.0, 2.3, 5.3};
-        double[] highs = {7.8, 11.3, 15.6};
-        for (int i = 0;  i < lows.length;  ++i) {
-            double low = cToF(lows[i]);
-            double high = cToF(highs[i]);
-            displayDailyTemperatures(low, high);
+        double userTemperature = userInput();
+        while (userTemperature >= -460) {
+            double celsius = fToC(userTemperature);
+            userTemperature = userInput();
         }
-   }
+    }
 }
